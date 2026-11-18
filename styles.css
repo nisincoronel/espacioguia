@@ -1,0 +1,251 @@
+/* Espacio Guía — V2, basada en el mockup de referencia */
+:root {
+  --deep:#06452f; --deep2:#075438; --green:#148247; --green2:#23964f;
+  --lime:#a9d986; --mint:#e9f6ec; --mint2:#f4faf5; --text:#17342a;
+  --muted:#4e665b; --line:#dfeae3; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);background:#fff;font-family:"DM Sans",sans-serif}
+h1,h2,h3,strong{font-family:"Manrope",sans-serif}
+a{text-decoration:none;color:inherit}
+svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.container{width:min(1440px,calc(100% - 72px));margin-inline:auto}
+.header{height:98px;background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid #f0f3f1}
+.header-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo{width:84px;height:68px;display:block}
+.logo svg{width:100%;height:100%;stroke:none}
+.brand-name{display:flex;flex-direction:column;line-height:1}
+.brand-name strong{font-size:31px;font-weight:800;letter-spacing:-1.1px;color:#073d2c}
+.brand-name small{font-size:14px;color:#163d2e;margin-top:7px;letter-spacing:.05px}
+.nav{display:flex;align-items:center;gap:15px}
+.nav-item{padding:11px 17px;border-radius:10px;font-size:16px;font-weight:600;white-space:nowrap;color:#172d25;transition:.2s}
+.nav-item:hover,.nav-item.active{background:#dff2e3;color:#0a5838}
+.chevron{font-size:17px;margin-left:4px;color:#6c8076}
+.campus-nav{display:flex;flex-direction:column;align-items:center;gap:0;line-height:1.1}
+.soon{font-size:11px;background:#ccebd3;color:#0b5a38;padding:3px 8px;border-radius:14px;margin-top:3px}
+.contact-nav{background:#06452f;color:#fff;display:flex;align-items:center;gap:10px;padding:14px 23px;border-radius:12px;font-size:15px;font-weight:700;white-space:nowrap;box-shadow:0 5px 12px rgba(6,69,47,.1);transition:.2s}
+.contact-nav:hover{background:#0c6943;transform:translateY(-1px)}
+.contact-nav svg{width:21px;height:21px}
+.menu-button{display:none}
+.hero{position:relative;overflow:hidden;background:linear-gradient(100deg,#f5fbf6 0%,#eef8f1 45%,#d9efdf 100%);min-height:346px}
+.hero-inner{display:grid;grid-template-columns:1fr 1.02fr;align-items:stretch;min-height:346px;position:relative}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:36px 0 43px;z-index:2}
+.hero h1{font-size:clamp(39px,4vw,53px);line-height:1.08;letter-spacing:-1.9px;margin:0 0 15px;color:#273c38;font-weight:800}
+.hero h1 span{color:#147743}
+.hero-copy p{font-size:19px;line-height:1.48;color:#263c37;max-width:650px;margin:0}
+.hero-buttons{display:flex;gap:24px;margin-top:25px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:15px 26px;border-radius:11px;font-size:16px;font-weight:800;transition:.2s}
+.button svg{width:25px;height:25px}
+.button-green{background:linear-gradient(135deg,#1a914a,#08713c);color:white;box-shadow:0 5px 12px rgba(10,93,51,.14)}
+.button-green:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(10,93,51,.2)}
+.button-outline{border:2px solid #0c6c3c;color:#0b4830;background:rgba(255,255,255,.45)}
+.button-outline:hover{background:#fff}
+.hero-photo{min-height:346px;position:relative;background-image:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1500&q=90");background-size:cover;background-position:center 45%;overflow:hidden}
+.hero-photo:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(225,245,230,.18),transparent 20%,rgba(5,54,34,.04))}
+.photo-curve{position:absolute;left:-165px;top:-40px;width:370px;height:460px;border-radius:48%;background:#d6eedc;opacity:.82;mix-blend-mode:screen;transform:rotate(20deg)}
+.photo-brand{position:absolute;top:36%;right:9%;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.88);padding:14px 17px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);color:#0b5437;font-family:Manrope,sans-serif;font-weight:800;font-size:20px}
+.photo-logo{width:38px;height:38px}
+.photo-logo svg{width:100%;height:100%;stroke:none}
+.hero-bottom-wave{position:absolute;bottom:-1px;left:0;right:0;height:18px;background:linear-gradient(90deg,#bce6c8,#dff3e4,#b6e2c2);clip-path:polygon(0 0,12% 100%,28% 0,43% 100%,58% 0,73% 100%,88% 0,100% 100%,100% 100%,0 100%)}
+.pillars{background:#fff;border-bottom:1px solid #e8efea}
+.pillars-row{display:grid;grid-template-columns:repeat(4,1fr);padding:23px 0 25px}
+.pillar{display:flex;align-items:center;gap:18px;padding:0 30px;border-right:1px solid #dbe7df;min-width:0}
+.pillar:first-child{padding-left:0}
+.pillar:last-child{border-right:0;padding-right:0}
+.pillar-icon{width:80px;height:80px;flex:0 0 80px;border-radius:50%;display:grid;place-items:center;background:#f0f8f2;color:#0d7442}
+.pillar-icon svg{width:38px;height:38px;stroke-width:2}
+.pillar h3{font-size:22px;letter-spacing:-.5px;margin:0 0 3px;color:#0c3c2c}
+.pillar p{font-size:15px;line-height:1.35;margin:0;color:#293d36}
+.showcase{display:grid;grid-template-columns:1.05fr 1fr;gap:35px;padding-top:30px;padding-bottom:29px}
+.showcase-column{min-width:0}
+.section-title{display:flex;align-items:center;gap:15px;margin-bottom:19px;min-width:0}
+.title-icon{width:46px;height:46px;color:#0b7542;flex:0 0 46px}
+.title-icon svg{width:100%;height:100%;stroke-width:2.2}
+.section-title h2{font-size:27px;letter-spacing:-.8px;margin:0;color:#103c2b;white-space:nowrap}
+.section-link{margin-left:auto;white-space:nowrap;color:#08723b;font-size:14px;font-weight:800}
+.section-link span{font-size:20px;margin-left:8px}
+.course-list{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.course-card{display:grid;grid-template-columns:42% 58%;min-height:205px;border:1px solid #e2e9e5;border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 3px 10px rgba(5,56,35,.03);transition:.2s}
+.course-card:hover{box-shadow:0 10px 24px rgba(5,56,35,.08);transform:translateY(-2px)}
+.course-photo{position:relative;background-size:cover;background-position:center}
+.photo-extraction{background-image:url("https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=85")}
+.photo-clinical{background-image:url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=85")}
+.course-badge{position:absolute;top:12px;left:12px;padding:7px 10px;border-radius:8px;font-size:11px;font-weight:700;white-space:nowrap}
+.course-badge.open{background:#bfe993;color:#215e24}
+.course-badge.next{background:#ffedb5;color:#6a5015}
+.course-info{padding:17px 16px 16px;position:relative;display:flex;flex-direction:column}
+.course-info h3{font-size:18px;line-height:1.2;letter-spacing:-.45px;margin:2px 0 13px;color:#0d3326}
+.course-info ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.course-info li{display:flex;align-items:center;gap:7px;font-size:12px;color:#324a40;line-height:1.3}
+.course-info li svg{width:16px;height:16px;flex:0 0 16px;stroke-width:1.8}
+.round-arrow{position:absolute;right:13px;bottom:12px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:#148047;color:white;font-size:16px;box-shadow:0 3px 7px rgba(12,90,50,.15)}
+.apps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.app-card{background:linear-gradient(160deg,#f4faf5,#eaf6ee);border-radius:13px;min-height:205px;padding:20px 14px 15px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:.2s;border:1px solid transparent}
+.app-card:hover{border-color:#c7e4d0;transform:translateY(-3px);box-shadow:0 8px 20px rgba(5,56,35,.07)}
+.app-icon{width:43px;height:43px;color:#0d7441;margin-bottom:14px}
+.app-icon svg{width:100%;height:100%;stroke-width:2}
+.app-card h3{font-size:19px;line-height:1.12;letter-spacing:-.45px;color:#0b3325;margin:0 0 10px}
+.app-card p{font-size:13px;line-height:1.42;color:#344a40;margin:0}
+.campus{padding-bottom:25px}
+.campus-band{position:relative;overflow:hidden;min-height:90px;display:grid;grid-template-columns:75px 245px 1fr 190px;align-items:center;gap:20px;background:linear-gradient(100deg,#edf8f0,#e1f4e6);border-radius:17px;padding:18px 38px}
+.campus-symbol{width:65px;height:65px;color:#087442}
+.campus-symbol svg{width:100%;height:100%;stroke-width:2.1}
+.campus-band h2{font-size:29px;letter-spacing:-.7px;margin:0;color:#0b3c2b}
+.campus-band p{font-size:16px;line-height:1.4;margin:0;color:#263d34}
+.campus-pill{justify-self:center;background:#bfe8c7;color:#0b5935;border-radius:25px;padding:12px 28px;font-weight:800;font-size:16px;z-index:1}
+.campus-wave{position:absolute;right:0;bottom:0;width:40%;height:100%;opacity:.7;background:#cdebd5;clip-path:polygon(0 100%,28% 62%,48% 100%,72% 52%,100% 80%,100% 100%)}
+.institutional{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:58px 0 54px;border-top:1px solid #e9f0eb}
+.institutional-copy{max-width:640px}
+.overline{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#168047}
+.institutional h2{font-size:32px;line-height:1.15;letter-spacing:-1px;margin:10px 0 13px;color:#0c3c2b}
+.institutional p{font-size:15px;line-height:1.65;color:#52685e;margin:0 0 18px}
+.institutional-mark{font-family:Manrope,sans-serif;font-size:23px;line-height:1.35;color:#4c7460;text-align:right;padding:24px 36px;border-left:1px solid #dbe9df}
+.institutional-mark strong{font-size:29px;color:#117542}
+.contact{background:#06452f;color:white;padding:37px 0}
+.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.contact .overline{color:#b8e2c3}
+.contact h2{font-size:29px;margin:8px 0;color:white}
+.contact p{font-size:14px;color:#d0e3d6;margin:0}
+.contact .button{font-size:14px}
+.footer{background:#f8fbf9}
+.footer-top{display:flex;justify-content:space-between;align-items:center;padding:25px 0;gap:30px}
+.footer-brand .logo{width:52px;height:48px}
+.footer-brand .brand-name strong{font-size:21px}
+.footer-brand .brand-name small{font-size:11px}
+.footer-links{display:flex;gap:25px;font-size:13px;font-weight:700;color:#486157}
+.footer-links a:hover{color:#0b7842}
+.footer-bottom{display:flex;justify-content:space-between;padding:15px 0;border-top:1px solid #e6eee8;color:#829188;font-size:11px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#063d2b;color:#fff;padding:12px 18px;border-radius:10px;font-size:13px;z-index:100;transition:.25s;box-shadow:0 9px 24px rgba(0,0,0,.18);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1250px){
+ .container{width:calc(100% - 48px)}
+ .brand-name strong{font-size:26px}
+ .brand-name small{font-size:12px}
+ .logo{width:70px}
+ .nav{gap:5px}
+ .nav-item{font-size:14px;padding:10px 12px}
+ .contact-nav{padding:12px 16px}
+ .pillar{padding-inline:17px}
+ .pillar-icon{width:65px;height:65px;flex-basis:65px}
+ .pillar h3{font-size:19px}
+ .pillar p{font-size:13px}
+ .showcase{gap:24px}
+ .section-title h2{font-size:24px}
+ .section-link{font-size:12px}
+ .course-card{grid-template-columns:38% 62%}
+ .course-info{padding:14px 12px}
+ .course-info h3{font-size:16px}
+ .course-info li{font-size:11px}
+ .app-card{padding:16px 10px}
+ .app-card h3{font-size:16px}
+ .app-card p{font-size:11px}
+}
+@media(max-width:950px){
+ .header{height:82px}
+ .header-wrap{gap:15px}
+ .menu-button{display:block;border:0;background:transparent;padding:10px;cursor:pointer}
+ .menu-button span{display:block;width:24px;height:2px;background:#075438;margin:5px;border-radius:2px}
+ .nav{display:none;position:absolute;top:81px;left:0;right:0;background:#fff;border-bottom:1px solid #e5eee8;padding:15px 24px 20px;box-shadow:0 15px 22px rgba(4,48,30,.08);flex-direction:column;align-items:stretch}
+ .nav.open{display:flex}
+ .nav-item{padding:12px 15px}
+ .campus-nav{align-items:flex-start}
+ .soon{margin-left:0}
+ .contact-nav{justify-content:center;margin-top:5px}
+ .hero-inner{grid-template-columns:1fr 1fr}
+ .hero h1{font-size:39px}
+ .hero-copy p{font-size:16px}
+ .hero-buttons{gap:12px}
+ .button{font-size:14px;padding:13px 17px}
+ .hero-photo{min-height:320px}
+ .pillars-row{grid-template-columns:1fr 1fr;gap:20px 0}
+ .pillar:nth-child(2){border-right:0}
+ .pillar:nth-child(3){padding-left:0}
+ .showcase{grid-template-columns:1fr;gap:35px}
+ .course-card{min-height:215px}
+ .course-info h3{font-size:18px}
+ .course-info li{font-size:12px}
+ .app-card{min-height:195px}
+ .campus-band{grid-template-columns:65px 210px 1fr 150px;padding:17px 22px;gap:15px}
+ .campus-band h2{font-size:25px}
+ .campus-band p{font-size:13px}
+ .campus-pill{font-size:14px;padding:10px 20px}
+}
+@media(max-width:650px){
+ .container{width:calc(100% - 32px)}
+ .header{height:75px}
+ .logo{width:53px;height:51px}
+ .brand{gap:8px}
+ .brand-name strong{font-size:20px;letter-spacing:-.6px}
+ .brand-name small{font-size:9px;margin-top:5px}
+ .nav{top:74px;padding:12px 16px 18px}
+ .hero-inner{display:flex;flex-direction:column;padding:26px 0 0}
+ .hero-copy{padding:5px 0 25px}
+ .hero h1{font-size:clamp(35px,9vw,44px);letter-spacing:-1.5px;margin-bottom:13px}
+ .hero-copy p{font-size:15px;line-height:1.5}
+ .hero-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:21px}
+ .button{font-size:12px;padding:12px 9px;gap:7px}
+ .button svg{width:20px;height:20px}
+ .hero-photo{width:100%;min-height:240px;margin:0 -16px;min-width:calc(100% + 32px);background-position:center}
+ .photo-brand{top:35%;right:7%;font-size:16px;padding:10px 12px}
+ .photo-logo{width:30px;height:30px}
+ .photo-curve{left:-100px;width:220px;height:320px}
+ .hero-bottom-wave{height:10px}
+ .pillars-row{grid-template-columns:1fr 1fr;gap:17px 10px;padding:19px 0}
+ .pillar{gap:10px;padding:0 5px;border:0!important}
+ .pillar-icon{width:49px;height:49px;flex-basis:49px}
+ .pillar-icon svg{width:25px;height:25px}
+ .pillar h3{font-size:14px;margin-bottom:3px}
+ .pillar p{font-size:10px;line-height:1.3}
+ .showcase{padding-top:24px;padding-bottom:22px;gap:28px}
+ .section-title{gap:8px;margin-bottom:15px;flex-wrap:wrap}
+ .title-icon{width:33px;height:33px;flex-basis:33px}
+ .section-title h2{font-size:19px}
+ .section-link{font-size:10px;margin-left:auto}
+ .section-link span{font-size:15px;margin-left:3px}
+ .course-list{grid-template-columns:1fr;gap:12px}
+ .course-card{min-height:178px;grid-template-columns:38% 62%}
+ .course-badge{font-size:9px;left:7px;top:8px;padding:6px 7px}
+ .course-info{padding:13px 11px}
+ .course-info h3{font-size:16px;margin:1px 0 10px}
+ .course-info li{font-size:10px;gap:5px}
+ .course-info li svg{width:14px;height:14px;flex-basis:14px}
+ .round-arrow{width:26px;height:26px;right:9px;bottom:9px}
+ .apps-grid{grid-template-columns:repeat(2,1fr);gap:9px}
+ .app-card{min-height:164px;padding:14px 10px}
+ .app-icon{width:34px;height:34px;margin-bottom:9px}
+ .app-card h3{font-size:16px;margin-bottom:7px}
+ .app-card p{font-size:10px;line-height:1.35}
+ .campus{padding-bottom:19px}
+ .campus-band{grid-template-columns:45px 1fr auto;gap:10px;padding:16px 13px;min-height:82px}
+ .campus-symbol{width:42px;height:42px}
+ .campus-band h2{font-size:19px}
+ .campus-band p{grid-column:2 / 4;font-size:11px;line-height:1.4}
+ .campus-pill{grid-column:3;grid-row:1;font-size:10px;padding:8px 10px}
+ .campus-wave{width:45%}
+ .institutional{padding:35px 0;display:block}
+ .institutional h2{font-size:24px}
+ .institutional p{font-size:13px}
+ .institutional-mark{margin-top:20px;text-align:left;border-left:0;border-top:1px solid #dbe9df;padding:16px 0 0;font-size:18px}
+ .institutional-mark strong{font-size:23px}
+ .contact{padding:28px 0}
+ .contact-inner{align-items:flex-start;flex-direction:column;gap:18px}
+ .contact h2{font-size:24px}
+ .contact p{font-size:12px}
+ .contact .button{width:auto;padding:12px 20px}
+ .footer-top{flex-direction:column;align-items:flex-start;gap:18px;padding:20px 0}
+ .footer-brand .logo{width:45px;height:42px}
+ .footer-brand .brand-name strong{font-size:18px}
+ .footer-brand .brand-name small{font-size:9px}
+ .footer-links{flex-wrap:wrap;gap:13px;font-size:11px}
+ .footer-bottom{font-size:9px;gap:7px;flex-direction:column;padding:12px 0}
+ .desktop-only{display:none}
+}
+@media(max-width:370px){
+ .hero-buttons{grid-template-columns:1fr}
+ .pillar{align-items:flex-start}
+ .pillar p{display:none}
+ .course-info h3{font-size:14px}
+ .app-card h3{font-size:14px}
+}
